@@ -1,0 +1,56 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: SQRL
+scopeName: source.sqrl
+fileTypes: [sqrl]
+uuid: ef2738fc-3cd7-440e-bf6c-15471c61201f
+
+patterns:
+
+# todo add a comment syntax if there is one
+
+
+
+- name: string.quoted.single
+  match: \'[^']*\'
+
+- name: string.quoted.double
+  match: \"[^"]*\"
+
+
+
+- name: variable.parameter
+  match: '(?i)\b(SessionId)\b'
+
+# - name: variable.language
+#   match: '(?i)\b(or|not)\b'
+
+- name: variable.other
+  match: '(?i)\b(Ip|IpNetwork|Isp|Country|ActorCreationIp|TargetCreationIp|TargetCreationIpNetwork|ActorCreationIpNetwork|ActorCreationIsp|TargetCreationIsp|TargetCreationCountry|ActorCreationCountry|Machine|SessionActor|Target|TargetOwner|CreatedContent|ActorPhone|TargetPhone|RawActorEmail|TargetImagehashes|ActorImagehashes|TargetEmail|ActorEmail|TargetEmailHandle|ActorEmailHandle|TargetEmailDomain|ActorEmailDomain|TargetUsername|ActorUsername|TargetHumanName|ActorHumanName|TargetFacebookId|ActorFacebookId|TargetInstagramId|ActorInstagramId|TargetDescription|ActorDescription|UserAgent|UserGeneratedText|TextHash|Simhash|AdvertisedDomains|AdvertisedDomainsFQ|AdvertisedUrls|AdvertisedIps|AdvertisedIsps|AdvertisedNames|AdvertisedUsernames|Imagehashes|ActorFuzzyCreditCardHash|TargetFuzzyCreditCardHash|UsdDollarAmount|UsdCents|BillingAddressPlaceId|BillingAddressCity|BillingAddressZip|BillingAddressPostalCode|BillingAddressCountry|BillingAddressName|ShippingAddressPlaceId|ShippingAddressCity|ShippingAddressZip|ShippingAddressPostalCode|ShippingAddressCountry|ShippingAddressName)\b'
+
+
+
+- name: keyword.control
+  match: '(?i)\b(where|when|with|rollout|match|every|max|last|total)\b'
+
+- name: keyword.operator
+  match: '(?i)\b(and|or|not|by|to|in)\b'
+
+- name: keyword.other
+  match: '(?i)\b(block|action|reason|let|create|rule|add|remove)\b'
+
+
+
+- match: '\b(-)?[0-9.]+\b'
+  name: constant.numeric.sqrl
+
+- name: constant.language
+  match: '(?i)\b(two|eight)\b'
+
+- name: constant.other
+  match: '(?i)\b(seconds|minutes|hours|days|weeks|months|month|day|hour)\b'
+
+
+
+-
+...
